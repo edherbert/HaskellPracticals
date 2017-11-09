@@ -26,7 +26,11 @@ distance :: Float -> Float -> Float -> Float -> Float
 distance x1 x2 y1 y2 = sqrt ((y1 - y2)^2 + (x1 - x2)^2)
 
 --6
---threeDifferent :: Int -> Int -> Int -> Bool
+--This one is slightly broken :/
+threeDifferent :: Int -> Int ->Int -> Bool
+threeDifferent x y z = if x != y && y == z
+    then False 
+    else True
 
 -- 7
 divisibleBy :: Int -> Int -> Bool 
