@@ -35,7 +35,6 @@ taxiFare distance
 --howManyAboveAverage :: Int -> Int -> Int -> Int
 --Find the average of the ints first?
 --One could be well above average
---All of them can't be above the average
 --Check to see if one of them is higher than the others.
 --howManyAboveAverage x y z
 
@@ -45,3 +44,13 @@ validDate day month
     | month <= 0 || month > 12 = False
     | day <= 0 || day > 31 = False
     | otherwise = True
+
+--8
+--I don't really understand the question.
+--At the moment I've just got a function that tells you how many days in each month.
+--I don't understand the bit about the every four years there being a leap year.
+daysInMonth :: Int -> Int -> Int
+daysInMonth month year
+    | month == 2 = 29
+    | elem month [9, 4, 6, 11] = 30
+    | otherwise = 31
