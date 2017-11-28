@@ -1,5 +1,4 @@
 
-
 --2
 ex0r :: Bool -> Bool -> Bool
 ex0r True True = False
@@ -18,3 +17,35 @@ ifThenElse False secodn third = third
 daysInMonth :: Int -> Int
 daysInMonth 1 = 31
 daysInMonth 2 = 28
+
+--5
+sumNumbers :: Int -> Int
+sumNumbers n
+    | n > 0 = sumNumbers (n - 1) + n
+    | otherwise = n
+
+--6
+sumSquares :: Int -> Int
+sumSquares n
+    | n > 0 = sumSquares (n - 1) + (n * n) 
+    | otherwise = n
+
+--7
+power :: Int -> Int -> Int
+power n m
+    | m > 1 = power (n + n) (m - 1)
+    | otherwise = n
+
+--8
+sumForTo :: Int -> Int -> Int
+sumForTo n m
+    | n > m = 0
+    | n == m = n
+    | otherwise = sumForTo (n + 1) m + n
+
+--9
+gcdd :: Int -> Int -> Int
+gcdd n m
+    | n > m = n - m
+    | m > n = m - n
+    | otherwise = m
