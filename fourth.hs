@@ -68,6 +68,21 @@ capitalise s = [toUpper n | n <- s]
 onlyDigits :: String -> String
 onlyDigits s = [n | n <- s, isDigit n]
 
+--8
+capMarks :: [StudentMark] -> [StudentMark]
+capMarks marks = [capMark n | n <- marks]
 
+--9
+--gradeStudents :: [StudentMark] -> [(String,Char)]
+--gradeStudents marks = [(s,(head grade (s,m))) | (s,m) <- marks] 
+--gradeStudents marks = [(fst n,head grade n) | n <- marks]
 
+--10
+duplicate :: String -> Int -> String
+duplicate message count
+    | count >= 0 = duplicate (message++message) (count-1)
+    | otherwise = message
 
+--11
+divisors :: Int -> [Int]
+divisors value = [x | x <- [0..value], mod x 2==0]
