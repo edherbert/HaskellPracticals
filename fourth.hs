@@ -85,4 +85,21 @@ duplicate message count
 
 --11
 divisors :: Int -> [Int]
-divisors value = [x | x <- [0..value], mod x 2==0]
+divisors value = [x | x <- [1..value], mod value x==0]
+
+--12
+isPrime :: Int -> Bool
+isPrime value
+    | length (divisors value) > 2 = False
+    | otherwise = True
+
+--13
+--split :: [(a,b)] -> ([a],[b])
+--split original = [(x, n) | x <- original, fst x, n <- origin, snd n]
+--split original = [(x,[]) | fst x] 
+
+
+
+
+
+
