@@ -61,6 +61,33 @@ listLength a
     | null a = 0 
     | otherwise = (listLength (drop 1 a)) + 1 
 
+--5
+multAll :: [Int] -> Int
+multAll [] = 1
+multAll a = (head a) * (multAll (drop 1 a))
+
+--6
+andAll :: [Bool] -> Bool
+andAll [] = True
+andAll b
+    | head b == True = andAll (drop 1 b)
+    | otherwise = False
+
+--7
+contElems :: Int -> [Int] -> Int
+contElems a b
+    | a == head b = contElems (a + 1) (drop 1 b)
+    | b == [] = 0
+    | otherwise = contElems a (drop 1 b) 
+
+--8
+--removeAll :: Int -> [Int] -> [Int]
+--removeAll a b
+--    | a == head b = (removeAll a (drop 1 b)):
 
 
-
+--9
+listMarks :: String -> [StudentMark] -> [Int]
+listMarks name marks
+    | fst (head marks) == name = (listMarks name (drop 1 marks)):(sdn head marks)
+    | otherwise = listMarks name (drop 1 marks)
